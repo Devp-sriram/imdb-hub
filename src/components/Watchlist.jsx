@@ -62,7 +62,7 @@ function Watchlist({ watchlist, setWatchlist, handleRemoveFromWatchlist }) {
         <input
           onChange={handleSearch}
           value={search}
-          className=" m-5 px-5 h-[3rem] w-[24rem] bg-gray-200 outline-none px-4 rounded-xl"
+          className=" m-5 px-5 h-[3rem] w-[24rem] bg-gray-200 outline-none rounded-xl"
           placeholder="Search movie"
           type="text"
         />
@@ -70,7 +70,7 @@ function Watchlist({ watchlist, setWatchlist, handleRemoveFromWatchlist }) {
 
       <div className="overflow-hidden rounded-lg border border-gray-200 m-8">
         <table className="w-full text-gray-500 text-center">
-          <thead className="border-b-2 ">
+          <thead className="hidden lg:block border-b-2 ">
             <tr>
               <th>Name</th>
 
@@ -108,13 +108,14 @@ function Watchlist({ watchlist, setWatchlist, handleRemoveFromWatchlist }) {
               })
               .map((movieObj) => {
                 return (
-                  <tr className="border-b-2">
-                    <td className="flex flex-row items-center justify-start p-5">
+                  <tr className="flex flex-col md:flex-row md:p-5 border-b-2 justify-center items-center" key={movieObj.id}>
+
+                    <td className="flex flex-col md:flex-row items-center justify-start p-5">
                       <img
                         className="w-[6rem] h-[10rem] "
                         src={`${movieObj.poster_url}`}
                       />
-                      <div className="mx-10">{movieObj.title}</div>
+                      <div className="mx-10"><a href={`https://www.imdb.com/title/${movieObj.imdb_id}`}>{movieObj.title}</a></div>
                     </td>
 
                     <td>{movieObj.source_release_date}</td>
