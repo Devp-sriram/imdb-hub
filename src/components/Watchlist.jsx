@@ -70,12 +70,11 @@ function Watchlist({ watchlist, setWatchlist, handleRemoveFromWatchlist }) {
 
       <div className="overflow-hidden rounded-lg border border-gray-200 m-8">
         <table className="w-full text-gray-500 text-center">
-          <thead className="hidden lg:block border-b-2 ">
+          <thead className="hidden lg:flex w-full h-20 justify-evenly border-b-2 ">
             <tr>
               <th>Name</th>
 
               <th>
-                {" "}
                 <i
                   onClick={sortIncreseing}
                   className="fa-solid fa-arrow-up m-4"
@@ -108,21 +107,22 @@ function Watchlist({ watchlist, setWatchlist, handleRemoveFromWatchlist }) {
               })
               .map((movieObj) => {
                 return (
-                  <tr className="flex flex-col md:flex-row md:p-5 border-b-2 justify-center items-center" key={movieObj.id}>
+                  <tr className="p-5 border-b-2 justify-center items-center" key={movieObj.id}>
 
-                    <td className="flex flex-col md:flex-row items-center justify-start p-5">
+                    <td className= "items-center justify-start p-5">
                       <img
-                        className="w-[6rem] h-[10rem] "
+                        className=""
                         src={`${movieObj.poster_url}`}
                       />
-                      <div className="mx-10"><a href={`https://www.imdb.com/title/${movieObj.imdb_id}`}>{movieObj.title}</a></div>
                     </td>
 
-                    <td>{movieObj.source_release_date}</td>
-                    <td>{movieObj.source_name}</td>
-                    <td>{movieObj.type}</td>
-
-                    <td onClick={()=>handleRemoveFromWatchlist(movieObj)} className="cursor-pointer text-red-800">Delete</td>
+                    <td>
+                      <div className="mx-10"><a href={`https://www.imdb.com/title/${movieObj.imdb_id}`}>{movieObj.title}</a></div>
+                      <p>{movieObj.source_release_date}</p>
+                      <p>{movieObj.source_name}</p>
+                      <p>{movieObj.type}</p>
+                      <button onClick={()=>handleRemoveFromWatchlist(movieObj)} className="cursor-pointer text-red-800">Delete</button>
+                    </td>
                   </tr>
                 );
               })}
