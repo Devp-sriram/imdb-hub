@@ -121,7 +121,7 @@ function Watchlist({ watchlist, setWatchlist, handleRemoveFromWatchlist }) {
                       <td>{movieObj.source_release_date}</td>
                       <td>{movieObj.source_name}</td>
                       <td>{movieObj.type}</td>
-                      <button onClick={()=>handleRemoveFromWatchlist(movieObj)} className="cursor-pointer text-red-800">Delete</button>
+                      <td><button onClick={()=>handleRemoveFromWatchlist(movieObj)} className="cursor-pointer text-red-800">Delete</button></td>
                     
                   </tr>
                 );
