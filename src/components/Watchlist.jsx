@@ -70,7 +70,7 @@ function Watchlist({ watchlist, setWatchlist, handleRemoveFromWatchlist }) {
 
       <div className="overflow-hidden rounded-lg border border-gray-200 m-8">
         <table className="w-full text-gray-500 text-center">
-          <thead className="hidden lg:flex w-full h-20 justify-evenly border-b-2 ">
+          <thead className="I w-full h-20 justify-evenly border-b-2 ">
             <tr>
               <th>Name</th>
 
@@ -116,13 +116,13 @@ function Watchlist({ watchlist, setWatchlist, handleRemoveFromWatchlist }) {
                       />
                     </td>
 
-                    <td>
-                      <div className="mx-10"><a href={`https://www.imdb.com/title/${movieObj.imdb_id}`}>{movieObj.title}</a></div>
-                      <p>{movieObj.source_release_date}</p>
-                      <p>{movieObj.source_name}</p>
-                      <p>{movieObj.type}</p>
+            
+                      <td className="mx-10"><a href={`https://www.imdb.com/title/${movieObj.imdb_id}`}>{movieObj.title}</a></td>
+                      <td>{movieObj.source_release_date}</td>
+                      <td>{movieObj.source_name}</td>
+                      <td>{movieObj.type}</td>
                       <button onClick={()=>handleRemoveFromWatchlist(movieObj)} className="cursor-pointer text-red-800">Delete</button>
-                    </td>
+                    
                   </tr>
                 );
               })}
