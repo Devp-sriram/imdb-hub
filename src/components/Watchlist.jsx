@@ -65,9 +65,9 @@ function Watchlist({ watchlist, setWatchlist, handleRemoveFromWatchlist }) {
         />
       </div>
 
-      <div className="flex lg:block overflow-hidden rounded-lg border border-gray-200 m-8 ">
+      <div className="overflow-hidden rounded-lg border border-gray-200 m-8 ">
         <table className="w-full text-gray-500 text-center">
-          <thead className="I w-full h-20 justify-evenly border-b-2 ">
+          <thead className="w-full h-20 justify-evenly border-b-2 ">
             <tr>
               <th>Name</th>
 
@@ -108,18 +108,15 @@ function Watchlist({ watchlist, setWatchlist, handleRemoveFromWatchlist }) {
 
                     <td className= "items-center justify-start p-5">
                       <img
-                        className=""
+                        className="w-[5rem]"
                         src={`${movieObj.poster_url}`}
                       />
                     </td>
 
-            
                       <td className="mx-10"><a href={`https://www.imdb.com/title/${movieObj.imdb_id}`}>{movieObj.title}</a></td>
                       <td>{movieObj.source_release_date}</td>
-                      <td>{movieObj.source_name}</td>
                       <td>{movieObj.type}</td>
                       <td><button onClick={()=>handleRemoveFromWatchlist(movieObj)} className="cursor-pointer text-red-800">Delete</button></td>
-                    
                   </tr>
                 );
               })}
