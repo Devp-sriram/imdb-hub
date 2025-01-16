@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 // import genreIds from "./utility/genre";
 
 function Watchlist({ watchlist, setWatchlist, handleRemoveFromWatchlist }) {
@@ -10,9 +10,6 @@ function Watchlist({ watchlist, setWatchlist, handleRemoveFromWatchlist }) {
     setSearch(e.target.value);
   };
 
-  // let handleFilter = (genre) => {
-  //   setCurrentGenre(genre);
-  // };
 
   let sortIncreseing = () => {
     let sortedIncresing = watchlist.sort((movieA, movieB) => {
@@ -68,7 +65,7 @@ function Watchlist({ watchlist, setWatchlist, handleRemoveFromWatchlist }) {
         />
       </div>
 
-      <div className="overflow-hidden rounded-lg border border-gray-200 m-8">
+      <div className="flex lg:block overflow-hidden rounded-lg border border-gray-200 m-8 ">
         <table className="w-full text-gray-500 text-center">
           <thead className="hidden lg:flex w-full h-20 justify-evenly border-b-2 ">
             <tr>
